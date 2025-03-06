@@ -33,7 +33,7 @@ public class BankAccount {
         }
     }
     
-    //menampilkan data 
+    //method menampilkan informasi akun
     public void displayInfo(){ 
         System.out.println("Nomor Rekening = " +noRek);
         System.out.println("Nama Pemilik = "+ namaPemilik);
@@ -41,32 +41,35 @@ public class BankAccount {
         System.out.println("Jenis Akun = "+ jenisAkun); 
         System.out.println("");
     }
+    
+    //method melakukan deposit
     public void deposit(double nominal){ 
-        if (nominal <= 0){
+        if (nominal <= 0){ //menyetel agar tidak bisa memasukkan nominal yang kurang dari 0
             System.out.println("Nominal deposit harus lebih dari 0!");
         } else {
-            saldo= nominal + saldo;
+            saldo= nominal + saldo; //jika nominal valid, saldo yang lama ditambahkan dengan nominal dan saldo terupdate
             System.out.println("Jumlah sebanyak "+nominal+" berhasil didepositkan");
         }
     }
+    //method withdraw atau menarik uang
     public void withdraw(double nominal){
         if (nominal <= 0 ){
             System.out.println("Nominal penarikan harus lebih dari 0!");
-        } else if (saldo < nominal){
+        } else if (saldo < nominal){ //tidak dapat menarik uang sebesar nominal apabila saldo kurang dari nominal
             System.out.println("Saldo tidak mencukupi!");
         } else {
-            saldo = saldo - nominal;
+            saldo = saldo - nominal; //saldo dikurang dan uang berhasil ditarik apabila nominal lebih kecil daripada saldo
             System.out.println("Jumlah sebanyak "+nominal+ " berhasil ditarik");
         }
     }
-    public void transfer(BankAccount tujuan, double nominal){
+    public void transfer(BankAccount tujuan, double nominal){ //method transfer
         if (nominal <= 0 ){
             System.out.println("Nominal penarikan harus lebih dari 0!");
         } else if (saldo < nominal){
             System.out.println("Saldo tidak mencukupi untuk transfer!");
         } else {
             saldo = saldo - nominal;
-            tujuan.saldo = tujuan.saldo + nominal;
+            tujuan.saldo = tujuan.saldo + nominal; //apabila transfer berhasil, saldo penerima akan bertambah sebesar nominal yang dikirim
             System.out.println("Berhasil mengirim sebesar " +nominal+ " ke nomor rekening " +tujuan.noRek+ "\n"+"Sisa saldo: "+saldo);
         }
         System.out.println("----------------------------------------------------");
