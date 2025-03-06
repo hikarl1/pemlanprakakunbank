@@ -11,18 +11,18 @@ package praktikum.pemlan;
 class BankAccountMain {
     public static void main(String[] args){
  
-        BankAccount AAA = new BankAccount("12345678", "Abecede Eefgeha", 20000.0, "Tabungan");
-        BankAccount BBB = new BankAccount("45678901", "Ijekael Emeno", 30000.0, "Giro");
+        BankAccount AAA = new BankAccount("12345678", "Abecede Eefgeha", "Tabungan");
+        BankAccount BBB = new BankAccount("45678901", "Ijekael Emeno", "Giro");
         
         AAA.displayInfo();
-        AAA.deposit(5000.0);
-        AAA.withdraw(15000.0);
-        AAA.transfer(BBB, 10000.0);
+        AAA.deposit(200.0);
+        AAA.withdraw(150.0);
+        AAA.transfer(BBB, 50.0);
                 
         BBB.displayInfo();
-        BBB.deposit(5000.0);
-        BBB.withdraw(15000.0);
-        BBB.transfer(AAA, 12500.0);
+        BBB.deposit(100.0);
+        BBB.withdraw(300.0);
+        BBB.transfer(AAA, 75.0);
 
     }
 }
