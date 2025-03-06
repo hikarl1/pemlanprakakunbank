@@ -26,22 +26,22 @@ public class BankAccount {
         this.noRek = noRek;
         this.namaPemilik = namaPemilik;
         this.jenisAkun = jenisAkun;
-        if (jenisAkun.equals("Tabungan")){
+        if (jenisAkun.equals("Tabungan")){ // untuk menentukkan saldo berdasarkan jenis akun
             this.saldo = 100.0;
         } else if (jenisAkun.equals("Giro")){
             this.saldo = 500.0;
         }
     }
     
-    //instasiasi
-    public void displayInfo(){
+    //menampilkan data 
+    public void displayInfo(){ 
         System.out.println("Nomor Rekening = " +noRek);
         System.out.println("Nama Pemilik = "+ namaPemilik);
         System.out.println("Saldo = "+ saldo); 
         System.out.println("Jenis Akun = "+ jenisAkun); 
         System.out.println("");
     }
-    public void deposit(double nominal){
+    public void deposit(double nominal){ 
         if (nominal <= 0){
             System.out.println("Nominal deposit harus lebih dari 0!");
         } else {
